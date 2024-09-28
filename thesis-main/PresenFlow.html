@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PresenFlow</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        /* Sidebar styling */
+        .sidebar {
+            height: 100vh;
+            width: 200px;
+            background-color: #1a1a1a;
+            color: white;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-bottom: 30px;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+        }
+        .sidebar .menu-item {
+            padding: 15px 0;
+            font-size: 18px;
+        }
+        .sidebar .menu-item:hover {
+            cursor: pointer;
+            color: #ccc;
+        }
+        .sidebar-bottom {
+            margin-top: auto;
+            padding-bottom: 20px;
+        }
+        /* Main content area */
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .main-content h2 {
+            margin: 20px 0;
+            font-size: 24px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 20px;
+            text-align: center;
+            font-size: 16px;
+            color: #2a2a2a;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .button:hover {
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+        .button-primary {
+            color: #5a32d3;
+            border-color: #5a32d3;
+        }
+        .button-primary:hover {
+            background-color: #ece8f9;
+        }
+        /* Input file styling */
+        #file-selector {
+            display: none;
+        }
+        label[for="file-selector"] {
+            padding: 10px 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            color: #2a2a2a;
+            text-align: center;
+        }
+        label[for="file-selector"]:hover {
+            background-color: #f0f0f0;
+        }
+        /* About Us Section with Image Placeholders */
+        .about-us-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 50px;
+            flex-wrap: wrap; /* Ensure profiles wrap if screen width is small */
+        }
+        .about-us-profile {
+            width: 45%; /* Keep profiles side by side */
+            text-align: center;
+            margin-bottom: 20px; /* Space between rows if wrapped */
+        }
+        .about-us-profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin-bottom: 10px;
+        }
+        .about-us-profile h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .about-us-profile p {
+            font-size: 16px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div>
+            <div class="menu-item">PresenFlow</div>
+            <div class="menu-item">Home</div>
+        </div>
+        <div class="sidebar-bottom">
+            <div class="menu-item"><a href="#about">More about PresenFlow</a></div>
+            <div class="menu-item"><a href="#about-us">About Us</a></div>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content">
+        <h2>Popular</h2>
+        <div>
+            <div class="button button-primary">New Presentation</div>
+            
+            <!-- File selector for "Convert to PPT" button -->
+            <input type="file" id="file-selector" accept=".doc,.docx,.pdf,.txt">
+            <label for="file-selector">Convert to PPT</label>
+        </div>
+
+        <h2>Presentations</h2>
+        <div style="border: 1px solid #ccc; height: 400px; background-color: white;">
+            <!-- Placeholder for presentations -->
+        </div>
+
+        <!-- Footer sections at the bottom -->
+        <div class="footer-section" id="about">
+            <h2>More about PresenFlow</h2>
+            <p>PresenFlow is a presentation creation and management tool designed to streamline your workflow.</p>
+        </div>
+
+        <!-- About Us Section with Image Placeholders -->
+        <div class="footer-section" id="about-us">
+            <h2>About Us</h2>
+            <div class="about-us-section">
+                <div class="about-us-profile">
+                    <img src="https://via.placeholder.com/150" alt="Creator 1">
+                    <h3>Creator 1</h3>
+                    <p>Creator 1 is the co-founder and lead developer of PresenFlow. With a passion for coding and design, they brought the vision to life.</p>
+                </div>
+                <div class="about-us-profile">
+                    <img src="https://via.placeholder.com/150" alt="Creator 2">
+                    <h3>Creator 2</h3>
+                    <p>Creator 2 is the co-founder and lead product manager, ensuring the platform meets the needs of its users through innovation and feedback.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add JavaScript to handle file selection
+        document.getElementById('file-selector').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                alert(`Selected file: ${file.name}`);
+                // You can now process the file for conversion
+            }
+        });
+    </script>
+</body>
+</html>
